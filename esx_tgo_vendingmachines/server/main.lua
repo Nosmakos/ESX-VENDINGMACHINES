@@ -11,10 +11,8 @@ AddEventHandler("esx_tgo_vendingmachines:buyVendingItem", function(totalBuyPrice
 	if xPlayer.getMoney() >= totalBuyPrice then
 
 		if selectedItem.name == itemName and selectedItem ~= nil and selectedItem.limit ~= -1 and selectedItem.count >= selectedItem.limit then
-			
 			TriggerClientEvent('esx:showNotification', xPlayer.source, "You cannot purchase more than the permitted amount.")
-
-			return
+		return
 		end
 		xPlayer.removeMoney(totalBuyPrice)
 		xPlayer.addInventoryItem(itemName, 1)
