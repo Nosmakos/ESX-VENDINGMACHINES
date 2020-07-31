@@ -2,7 +2,7 @@ ESX = nil
 
 local bendingMachines = {-654402915}
 local openedVendingMachine = false
-local distX, distY, distZ = 0,0,0
+local distX, distY, distZ = 0, 0, 0
 
 Citizen.CreateThread(function()
     while ESX == nil do
@@ -63,13 +63,13 @@ end)
 
 VendingMachineMenu = function()
 
-    openedVendingMachine = true
+        openedVendingMachine = true
 
 	local elements = {}
     
-    for k,v in pairs(Config.candybox) do
-		table.insert(elements,{label = v.label .. ' | <font color=red>'..Config.PaymentSymbol..v.price..' - ('..v.keyValue..')</font>', value = v.value, price = v.price})
-    end
+        for k,v in pairs(Config.candybox) do
+	    table.insert(elements,{label = v.label .. ' | <font color=red>'..Config.PaymentSymbol..v.price..' - ('..v.keyValue..')</font>', value = v.value, price = v.price})
+        end
 
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), "esx_tgo_vendingmachines_main_menu",
 	{
