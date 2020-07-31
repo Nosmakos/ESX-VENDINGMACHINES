@@ -48,7 +48,7 @@ Citizen.CreateThread(function()
         Citizen.Wait(1000)
 
         if openedVendingMachine then
-            local ped = GetPlayerPed(-1)
+            local ped = PlayerPedId()
             local pos = GetEntityCoords(ped)
 
             local dist = GetDistanceBetweenCoords(pos.x, pos.y, pos.z, distX, distY, distZ, true)
@@ -63,7 +63,6 @@ end)
 
 VendingMachineMenu = function()
 
-    local player = PlayerPedId()
     openedVendingMachine = true
 
 	local elements = {}
