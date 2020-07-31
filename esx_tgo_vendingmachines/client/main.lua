@@ -16,7 +16,7 @@ Citizen.CreateThread(function()
         Citizen.Wait(0)
 
         if not openedVendingMachine then
-            local ped = GetPlayerPed(-1)
+            local ped = PlayerPedId()
             local pos = GetEntityCoords(ped)
 
             for i = 1, #bendingMachines do
